@@ -33,7 +33,7 @@ export default function Sidebar() {
       <div className="lg:hidden fixed top-4 left-4 z-50">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="p-2 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-lg text-zinc-600 dark:text-zinc-400"
+          className="p-2 rounded-xl bg-white border border-zinc-200 shadow-lg text-zinc-600"
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
@@ -51,14 +51,14 @@ export default function Sidebar() {
       <aside className={`
         fixed top-0 left-0 z-40 h-screen w-64 transition-transform 
         ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
-        lg:translate-x-0 border-r border-zinc-200/60 bg-white/70 backdrop-blur-2xl dark:border-zinc-800/60 dark:bg-black/70
+        lg:translate-x-0 border-r border-zinc-200/60 bg-white/70 backdrop-blur-2xl
       `}>
         <div className="flex h-full flex-col px-4 py-6">
           <div className="flex items-center gap-3 px-2 mb-10">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-900 text-white shadow-xl shadow-zinc-900/10 dark:bg-emerald-500 dark:shadow-emerald-500/10">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-900 text-white shadow-xl shadow-zinc-900/10">
               <ShoppingCart className="h-5 w-5" />
             </div>
-            <h1 className="text-lg font-black tracking-tight text-zinc-900 dark:text-zinc-50 leading-none">
+            <h1 className="text-lg font-black tracking-tight text-zinc-900 leading-none">
               Lista Super
             </h1>
           </div>
@@ -74,8 +74,8 @@ export default function Sidebar() {
                   className={`
                     group flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-bold transition-all
                     ${active 
-                      ? "bg-zinc-900 text-white dark:bg-emerald-500 shadow-md" 
-                      : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900"}
+                      ? "bg-zinc-900 text-white shadow-md" 
+                      : "text-zinc-600 hover:bg-zinc-100"}
                   `}
                 >
                   <item.icon className="h-5 w-5" />
@@ -85,7 +85,7 @@ export default function Sidebar() {
             })}
           </nav>
 
-          <div className="mt-auto pt-6 border-t border-zinc-100 dark:border-zinc-900">
+          <div className="mt-auto pt-6 border-t border-zinc-100">
             <p className="text-center text-[10px] font-black uppercase tracking-widest text-zinc-400">
               Hecho con amor por Pedro
             </p>

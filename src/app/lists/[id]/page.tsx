@@ -134,15 +134,15 @@ export default function ListDetailPage() {
         
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <div className="flex h-16 w-16 items-center justify-center rounded-[24px] bg-zinc-900 text-white shadow-xl shadow-zinc-900/10 dark:bg-emerald-500 dark:shadow-emerald-500/10">
+            <div className="flex h-16 w-16 items-center justify-center rounded-[24px] bg-zinc-900 text-white shadow-xl shadow-zinc-900/10">
               <ListTodo className="h-8 w-8" />
             </div>
             <div>
-              <h1 className="text-4xl font-black tracking-tight text-zinc-900 dark:text-zinc-50">
+              <h1 className="text-4xl font-black tracking-tight text-zinc-900">
                 {list.name}
               </h1>
               <div className="flex items-center gap-4 mt-1">
-                <span className="text-zinc-500 dark:text-zinc-400 font-bold text-sm">
+                <span className="text-zinc-500 font-bold text-sm">
                   {listItems.length} {listItems.length === 1 ? 'producto' : 'productos'}
                 </span>
               </div>
@@ -151,7 +151,7 @@ export default function ListDetailPage() {
           
           <button 
             onClick={handleDeleteList}
-            className="p-4 rounded-2xl bg-rose-50 text-rose-500 hover:bg-rose-500 hover:text-white transition-all active:scale-95 dark:bg-rose-500/10 dark:hover:bg-rose-500"
+            className="p-4 rounded-2xl bg-rose-50 text-rose-500 hover:bg-rose-500 hover:text-white transition-all active:scale-95"
             title="Eliminar lista"
           >
             <Trash2 className="h-6 w-6" />
@@ -163,19 +163,19 @@ export default function ListDetailPage() {
         {/* Current List Section */}
         <div className="flex-[1.5] flex flex-col min-h-0">
           <div className="flex items-center justify-between mb-4 px-2">
-            <h3 className="text-xs font-black uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+            <h3 className="text-xs font-black uppercase tracking-widest text-zinc-400">
               Productos en la lista
             </h3>
-            <div className="h-px flex-1 mx-6 bg-zinc-100 dark:bg-zinc-800" />
+            <div className="h-px flex-1 mx-6 bg-zinc-100" />
           </div>
 
           <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-3">
             {listItems.length === 0 ? (
-              <div className="border-2 border-dashed border-zinc-200 dark:border-zinc-800 rounded-[32px] py-16 text-center">
+              <div className="border-2 border-dashed border-zinc-200 rounded-[32px] py-16 text-center">
                 <p className="text-zinc-400 font-bold mb-4">¡Tu lista está vacía!</p>
                 <button 
                   onClick={() => setIsAdding(true)}
-                  className="px-6 py-3 rounded-2xl bg-zinc-900 text-white dark:bg-emerald-500 font-bold text-sm shadow-xl shadow-zinc-900/10 dark:shadow-emerald-500/10 animate-bounce"
+                  className="px-6 py-3 rounded-2xl bg-zinc-900 text-white font-bold text-sm shadow-xl shadow-zinc-900/10 animate-bounce"
                 >
                   Agregar productos
                 </button>
@@ -184,14 +184,14 @@ export default function ListDetailPage() {
               listItems.map((item) => (
                 <div 
                   key={item.id}
-                  className="group flex items-center justify-between p-4 rounded-3xl border border-zinc-100 bg-white dark:bg-zinc-950 dark:border-zinc-800 transition-all hover:shadow-lg hover:shadow-zinc-200/50 dark:hover:shadow-none"
+                  className="group flex items-center justify-between p-4 rounded-3xl border border-zinc-100 bg-white transition-all hover:shadow-lg hover:shadow-zinc-200/50"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="h-12 w-12 rounded-2xl bg-zinc-50 dark:bg-zinc-900 flex items-center justify-center text-emerald-500">
+                    <div className="h-12 w-12 rounded-2xl bg-zinc-50 flex items-center justify-center text-emerald-500">
                       <ShoppingCart className="h-6 w-6" />
                     </div>
                     <div>
-                      <h4 className="font-black text-zinc-900 dark:text-zinc-50 leading-tight">
+                      <h4 className="font-black text-zinc-900 leading-tight">
                         {item.products?.name}
                       </h4>
                       <div className="flex items-center gap-3 mt-1">
@@ -209,7 +209,7 @@ export default function ListDetailPage() {
                   
                   <button 
                     onClick={() => handleRemoveProductFromList(item.id)}
-                    className="p-3 rounded-xl text-rose-500 bg-rose-50 dark:bg-rose-500/10 sm:text-zinc-300 sm:bg-transparent sm:dark:bg-transparent sm:opacity-0 sm:group-hover:opacity-100 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-500/10 transition-all active:scale-95"
+                    className="p-3 rounded-xl text-rose-500 bg-rose-50 sm:text-zinc-300 sm:bg-transparent sm:opacity-0 sm:group-hover:opacity-100 hover:text-rose-500 hover:bg-rose-50 transition-all active:scale-95"
                   >
                     <X className="h-5 w-5" />
                   </button>
@@ -222,10 +222,10 @@ export default function ListDetailPage() {
         {/* Add Products Section */}
         <div className="flex-1 flex flex-col min-h-0">
           <div className="flex items-center justify-between mb-4 px-2">
-            <h3 className="text-xs font-black uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+            <h3 className="text-xs font-black uppercase tracking-widest text-zinc-400">
               Agregar productos
             </h3>
-            <div className="h-px flex-1 mx-6 bg-zinc-100 dark:bg-zinc-800" />
+            <div className="h-px flex-1 mx-6 bg-zinc-100" />
           </div>
 
           <div className="relative mb-4 group">
@@ -235,13 +235,13 @@ export default function ListDetailPage() {
               placeholder="Buscar productos para agregar..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full h-14 rounded-2xl border border-zinc-200 bg-white pl-12 pr-4 text-sm font-bold text-zinc-900 outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 transition-all shadow-sm"
+              className="w-full h-14 rounded-2xl border border-zinc-200 bg-white pl-12 pr-4 text-sm font-bold text-zinc-900 outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all shadow-sm"
             />
           </div>
 
           <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-2">
             {filteredProducts.length === 0 ? (
-              <div className="p-8 text-center border-2 border-dashed border-zinc-100 dark:border-zinc-800 rounded-3xl">
+              <div className="p-8 text-center border-2 border-dashed border-zinc-100 rounded-3xl">
                 <p className="text-zinc-400 text-xs font-bold uppercase tracking-wider">
                   {searchQuery ? "No se encontraron productos" : "Todos los productos agregados"}
                 </p>
@@ -251,14 +251,14 @@ export default function ListDetailPage() {
                 <button
                   key={product.id}
                   onClick={() => handleAddProductToList(product.id)}
-                  className="w-full flex items-center justify-between p-3 rounded-2xl border border-zinc-50 bg-zinc-50/50 hover:bg-white hover:border-emerald-500/30 dark:border-zinc-800/50 dark:bg-zinc-900/50 dark:hover:bg-black transition-all group"
+                  className="w-full flex items-center justify-between p-3 rounded-2xl border border-zinc-50 bg-zinc-50/50 hover:bg-white hover:border-emerald-500/30 transition-all group"
                 >
                   <div className="flex items-center gap-3 text-left">
-                    <div className="h-10 w-10 rounded-xl bg-white dark:bg-zinc-800 flex items-center justify-center text-zinc-300 group-hover:text-emerald-500 transition-colors shadow-sm">
+                    <div className="h-10 w-10 rounded-xl bg-white flex items-center justify-center text-zinc-300 group-hover:text-emerald-500 transition-colors shadow-sm">
                       <Plus className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="font-bold text-zinc-700 dark:text-zinc-200 items-center gap-2 flex">
+                      <div className="font-bold text-zinc-700 items-center gap-2 flex">
                         {product.name}
                       </div>
                       <div className="text-[10px] text-zinc-400 font-bold uppercase tracking-tighter">

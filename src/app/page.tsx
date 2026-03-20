@@ -76,7 +76,7 @@ export default function Home() {
     <div className="flex flex-col h-full overflow-hidden animate-in fade-in duration-700">
       <div className="flex-shrink-0 pt-10 pb-6">
         {/* <div className="mb-10">
-          <h1 className="text-4xl font-black tracking-tight text-zinc-900 dark:text-zinc-50 mb-2">
+          <h1 className="text-4xl font-black tracking-tight text-zinc-900 mb-2">
             Buscar Productos
           </h1>
         </div> */}
@@ -91,7 +91,7 @@ export default function Home() {
                 placeholder="¿Qué estás buscando hoy?"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="h-16 w-full rounded-2xl border border-zinc-200 bg-white pl-14 pr-6 text-lg font-bold text-zinc-900 shadow-sm outline-none transition-all focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 placeholder:text-zinc-400"
+                className="h-16 w-full rounded-2xl border border-zinc-200 bg-white pl-14 pr-6 text-lg font-bold text-zinc-900 shadow-sm outline-none transition-all focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 placeholder:text-zinc-400"
               />
             </div>
 
@@ -105,7 +105,7 @@ export default function Home() {
                       e.target.value = "";
                     }
                   }}
-                  className="h-16 w-full md:w-48 rounded-2xl border border-zinc-200 bg-white pl-12 pr-4 text-sm font-bold text-zinc-700 outline-none transition-all focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 appearance-none cursor-pointer"
+                  className="h-16 w-full md:w-48 rounded-2xl border border-zinc-200 bg-white pl-12 pr-4 text-sm font-bold text-zinc-700 outline-none transition-all focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 appearance-none cursor-pointer"
                   defaultValue=""
                 >
                   <option value="" disabled>Categoría...</option>
@@ -127,7 +127,7 @@ export default function Home() {
                       e.target.value = "";
                     }
                   }}
-                  className="h-16 w-full md:w-48 rounded-2xl border border-zinc-200 bg-white pl-12 pr-4 text-sm font-bold text-zinc-700 outline-none transition-all focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 appearance-none cursor-pointer"
+                  className="h-16 w-full md:w-48 rounded-2xl border border-zinc-200 bg-white pl-12 pr-4 text-sm font-bold text-zinc-700 outline-none transition-all focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 appearance-none cursor-pointer"
                   defaultValue=""
                 >
                   <option value="" disabled>Súper...</option>
@@ -165,7 +165,7 @@ export default function Home() {
                   <button
                     key={id}
                     onClick={() => toggleSupermarket(id)}
-                    className="flex items-center gap-2 rounded-xl bg-zinc-900 px-3 py-1.5 text-xs font-bold text-white shadow-lg shadow-zinc-900/10 transition-all hover:bg-black active:scale-95 dark:bg-emerald-700 dark:hover:bg-emerald-800"
+                    className="flex items-center gap-2 rounded-xl bg-zinc-900 px-3 py-1.5 text-xs font-bold text-white shadow-lg shadow-zinc-900/10 transition-all hover:bg-black active:scale-95"
                   >
                     <Store className="h-3 w-3" />
                     {name}
@@ -190,10 +190,10 @@ export default function Home() {
       {/* Results - This part scrolls */}
       <div className="flex-1 overflow-y-auto pr-2 pb-10 custom-scrollbar">
         <div className="flex items-center justify-between mb-6 px-2">
-          <h2 className="text-sm font-black uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500">
+          <h2 className="text-sm font-black uppercase tracking-[0.2em] text-zinc-400">
             {filteredItems.length} Productos Encontrados
           </h2>
-          <div className="h-px flex-1 mx-6 bg-zinc-200 dark:bg-zinc-800" />
+          <div className="h-px flex-1 mx-6 bg-zinc-200" />
         </div>
 
         {isLoading ? (
@@ -201,18 +201,18 @@ export default function Home() {
             <div className="h-8 w-8 animate-spin rounded-full border-4 border-emerald-500 border-t-transparent" />
           </div>
         ) : filteredItems.length === 0 ? (
-          <div className="rounded-[40px] border-2 border-dashed border-zinc-200 py-20 text-center dark:border-zinc-800 animate-in fade-in zoom-in-95 duration-700">
-            <div className="mb-4 inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-zinc-50 text-zinc-400 dark:bg-zinc-900/50">
+          <div className="rounded-[40px] border-2 border-dashed border-zinc-200 py-20 text-center animate-in fade-in zoom-in-95 duration-700">
+            <div className="mb-4 inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-zinc-50 text-zinc-400">
               <ShoppingCart className="h-10 w-10 opacity-20" />
             </div>
-            <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50">No hay resultados</h3>
-            <p className="text-zinc-500 dark:text-zinc-400 max-w-xs mx-auto mt-2">Intenta ajustar tus filtros o buscar algo diferente.</p>
+            <h3 className="text-xl font-bold text-zinc-900">No hay resultados</h3>
+            <p className="text-zinc-500 max-w-xs mx-auto mt-2">Intenta ajustar tus filtros o buscar algo diferente.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {filteredItems.map(item => (
               <div key={item.id} className="animate-reveal-bottom">
-                <div className="rounded-3xl border border-zinc-100 bg-white p-2 dark:border-zinc-800 dark:bg-zinc-950 transition-all hover:shadow-xl hover:shadow-zinc-200/50 dark:hover:shadow-none hover:-translate-y-1">
+                <div className="rounded-3xl border border-zinc-100 bg-white p-2 transition-all hover:shadow-xl hover:shadow-zinc-200/50 hover:-translate-y-1">
                   <GroceryItemRow 
                     item={item} 
                     onDelete={handleDeleteProduct} 

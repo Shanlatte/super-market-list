@@ -52,21 +52,21 @@ export default function CategoriesPage() {
       <div className="flex-shrink-0 space-y-8 mb-8">
         <div>
           <div className="flex items-center gap-3 mb-2">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-zinc-900 text-white shadow-xl shadow-zinc-900/10 dark:bg-emerald-500 dark:shadow-emerald-500/10">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-zinc-900 text-white shadow-xl shadow-zinc-900/10">
               <Tag className="h-6 w-6" />
             </div>
             <div>
-              <h1 className="text-2xl font-black tracking-tight text-zinc-900 dark:text-zinc-50">
+              <h1 className="text-2xl font-black tracking-tight text-zinc-900">
                 Categorías
               </h1>
-              <p className="text-zinc-500 dark:text-zinc-400 font-medium">Clasifica tus productos para encontrarlos rápido.</p>
+              <p className="text-zinc-500 font-medium">Clasifica tus productos para encontrarlos rápido.</p>
             </div>
           </div>
         </div>
 
         {/* Form Section */}
-        <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-xl dark:border-zinc-800 dark:bg-zinc-950">
-          <h3 className="text-xs font-black uppercase tracking-widest text-zinc-400 dark:text-zinc-500 mb-4 px-2">Agregar Nueva Categoría</h3>
+        <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-xl">
+          <h3 className="text-xs font-black uppercase tracking-widest text-zinc-400 mb-4 px-2">Agregar Nueva Categoría</h3>
           <form 
             onSubmit={(e) => {
               e.preventDefault();
@@ -82,10 +82,10 @@ export default function CategoriesPage() {
               <input 
                 name="name"
                 placeholder="Nombre"
-                className="w-full h-14 rounded-2xl border border-zinc-200 bg-zinc-50 px-5 text-zinc-900 outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 transition-all font-medium"
+                className="w-full h-14 rounded-2xl border border-zinc-200 bg-zinc-50 px-5 text-zinc-900 outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all font-medium"
               />
             </div>
-            <button className="h-14 px-8 rounded-2xl bg-zinc-900 font-bold text-white dark:bg-emerald-500 hover:opacity-90 shadow-xl shadow-zinc-900/10 dark:shadow-emerald-500/10 transition-all active:scale-95">
+            <button className="h-14 px-8 rounded-2xl bg-zinc-900 font-bold text-white hover:opacity-90 shadow-xl shadow-zinc-900/10 transition-all active:scale-95">
               Agregar
             </button>
           </form>
@@ -93,11 +93,11 @@ export default function CategoriesPage() {
       </div>
 
       {/* List Section - Now Scrollable */}
-      <div className="flex-1 min-h-0 flex flex-col rounded-3xl border border-zinc-200 bg-white shadow-xl dark:border-zinc-800 dark:bg-zinc-950 overflow-hidden">
-        <div className="flex-shrink-0 p-6 pb-4 border-b border-zinc-50 dark:border-zinc-900">
+      <div className="flex-1 min-h-0 flex flex-col rounded-3xl border border-zinc-200 bg-white shadow-xl overflow-hidden">
+        <div className="flex-shrink-0 p-6 pb-4 border-b border-zinc-50">
           <div className="flex items-center justify-between px-2">
-            <h3 className="text-xs font-black uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Categorías Registradas</h3>
-            <span className="text-[10px] font-bold bg-zinc-100 dark:bg-zinc-900 px-2 py-1 rounded-md text-zinc-500">
+            <h3 className="text-xs font-black uppercase tracking-widest text-zinc-400">Categorías Registradas</h3>
+            <span className="text-[10px] font-bold bg-zinc-100 px-2 py-1 rounded-md text-zinc-500">
               {categories.length} total
             </span>
           </div>
@@ -113,24 +113,24 @@ export default function CategoriesPage() {
               {categories.map(c => (
                 <div 
                   key={c.id} 
-                  className="group flex items-center justify-between rounded-2xl border border-zinc-50 bg-zinc-50/50 p-4 hover:border-emerald-500/30 hover:bg-white dark:bg-zinc-900/50 dark:border-zinc-800/50 dark:hover:border-emerald-500/30 dark:hover:bg-zinc-900 transition-all"
+                  className="group flex items-center justify-between rounded-2xl border border-zinc-50 bg-zinc-50/50 p-4 hover:border-emerald-500/30 hover:bg-white transition-all"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="h-8 w-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-emerald-500 transition-colors">
+                    <div className="h-8 w-8 rounded-lg bg-zinc-100 flex items-center justify-center text-zinc-400 group-hover:text-emerald-500 transition-colors">
                       <Tag className="h-4 w-4" />
                     </div>
-                    <span className="font-bold text-zinc-700 dark:text-zinc-200">{c.name}</span>
+                    <span className="font-bold text-zinc-700">{c.name}</span>
                   </div>
                   <button 
                     onClick={() => handleDeleteCategory(c.id)}
-                    className="flex items-center gap-2 px-3 py-2 text-xs font-bold text-rose-500 bg-rose-50 dark:bg-rose-500/10 rounded-xl opacity-100 sm:opacity-0 sm:group-hover:opacity-100 hover:bg-rose-500 hover:text-white transition-all transform active:scale-90"
+                    className="flex items-center gap-2 px-3 py-2 text-xs font-bold text-rose-500 bg-rose-50 rounded-xl opacity-100 sm:opacity-0 sm:group-hover:opacity-100 hover:bg-rose-500 hover:text-white transition-all transform active:scale-90"
                   >
                     <Trash2 className="h-4 w-4"/>
                   </button>
                 </div>
               ))}
               {categories.length === 0 && (
-                <div className="border border-dashed border-zinc-200 dark:border-zinc-800 rounded-3xl py-12 text-center bg-zinc-50/30 dark:bg-zinc-900/20">
+                <div className="border border-dashed border-zinc-200 rounded-3xl py-12 text-center bg-zinc-50/30">
                   <p className="text-zinc-500 font-medium">No hay categorías registradas todavía.</p>
                 </div>
               )}
