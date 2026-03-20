@@ -10,13 +10,15 @@ import {
   LayoutDashboard,
   Menu,
   X,
-  ShoppingCart
+  ShoppingCart,
+  ListTodo
 } from "lucide-react";
 import { useState } from "react";
 
 const navigation = [
   { name: 'Buscar Productos', href: '/', icon: Search },
   { name: 'Agregar Producto', href: '/products/add', icon: PlusCircle },
+  { name: 'Mis Listas', href: '/lists', icon: ListTodo },
   { name: 'Supermercados', href: '/supermarkets', icon: Store },
   { name: 'Categorías', href: '/categories', icon: Tag },
 ];

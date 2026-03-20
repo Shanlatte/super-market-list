@@ -18,3 +18,18 @@ export interface GroceryItem {
   categories?: { name: string };
   supermarkets?: { name: string };
 }
+
+export interface ShoppingList {
+  id: string;
+  name: string;
+  created_at: string;
+}
+
+export interface ListItem {
+  id: string;
+  list_id: string;
+  product_id: string;
+  created_at: string;
+  // Join field
+  products?: GroceryItem;
+}
